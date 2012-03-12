@@ -1,0 +1,139 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+
+/*$color1: #555;
+$color2: #ddd;
+$color3: #fff;
+$color4: #333;
+$color5: #444;
+$color6: #ff9000;*/
+
+$color1: #4c4c4c;
+$color2: #eee;
+$color3: #eee;
+$color4: #222;
+$color5: #444;
+$color6: #ff9000;
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin rounded-corners($radius, $shadow) {
+	border-radius: $radius;
+	box-shadow: 0px 1px 0px $shadow;
+}
+
+body {
+	font: 18px/24px cambria;
+	color: $color2;
+	background: $color1;
+	p {
+		margin-bottom: 18px;
+	}
+	a {
+		@include rounded-corners(5px, #777);
+
+		display: inline-block;
+		padding: 0px 4px;
+		color: $color3;
+		background: $color4;
+		text-decoration: none;
+		&:hover {
+			color: $color4;
+			background: $color3;
+		}
+	}
+	#wrapper {
+		margin: 10px auto;
+		width: 500px;
+	}
+}
+
+header {
+	h1 {
+		margin: 20px 0;
+		text-align: justify;
+		text-shadow: 1px 1px 0px #000;
+	}
+	nav {
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			li {
+				float: left;
+				margin-right: 5px;
+				a {
+					padding: 10px;
+				}
+			}
+		}
+	}
+}
+
+#content {
+	clear: both;
+	margin-top: 80px;
+	text-align: justify;
+	.box {
+		@include rounded-corners(5px, #777);
+
+		padding: 15px 5px 15px 15px;
+		background: $color5;
+		form {
+			input {
+                padding: 5px;
+                width: 220px;
+                font-size: 14px;
+                background: $color2;
+                border: 0;
+                border-radius: 5px;
+                box-shadow: 0px 1px 0px $color4;
+			}
+			.team-member {
+				float: left;
+				margin: 10px 10px 0 0;
+				padding: 10px;
+				width: 210px;
+				background: $color4;
+				border-radius: 5px;
+				//box-shadow: 0px 1px 0px $color1;
+				.field {
+					//float: left;
+					margin-right: 10px;
+					input {
+						width: 200px;
+					}
+				}
+			}
+			.actions {
+				clear: both;
+				padding-top: 10px;
+				text-align: center;
+				input {
+					margin-top: 10px;
+                	padding: 12px 24px;
+	                width: auto;
+	                font-size: 24px;
+	                color: $color3;
+	                background: $color6;
+	                border-radius: 5px;
+				}
+			}
+		}
+	}
+}
+

@@ -7,9 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>Hej!</header>
-  <%= yield %>
-  <aside>Heroku!</aside>
-  <footer>Ha det gött!</footer>
+  <div id="wrapper">
+    <header>
+      <h1>Unihack</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Sign up</a></li>
+          <li><a href="#">Teams</a></li>
+          <li><a href="#">Rules & Prizes</a></li>
+          <li><a href="#">Sponsors</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="content">
+      <%= yield %>
+      <aside></aside>
+    </section>
+    <footer>
+      <!--<%= image_tag "octocat.png" %>-->
+    </footer>
+  </div>
 </body>
 </html>
