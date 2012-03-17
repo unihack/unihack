@@ -4,9 +4,11 @@ Unihack::Application.routes.draw do
     resources :members
   end
 
-  match 'rules'    => 'home#rules'
+  match 'admin' => 'admin#index'
+
+  match 'rules' => 'home#rules'
   match 'sponsors' => 'home#sponsors'
-  match 'faq'      => 'home#faq'
+  match 'faq' => 'home#faq'
 
   root :to => 'home#index'
 
