@@ -2,12 +2,12 @@ class HomeController < ApplicationController
   def index
   end
 
-  def rules
+  def competition
+  end
+
+  def schedule
   end
 
   def sponsors
-  end
-
-  def faq
   end
 end

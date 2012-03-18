@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Unihack</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <title>unihack</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="wrapper">
+  <div class="container">
     <header>
-      <h1>Unihack</h1>
+      <h1><%= link_to "unihack", root_path %></h1>
       <nav>
         <ul>
-          <li><a href="#">Sign up</a></li>
-          <li><a href="#">Teams</a></li>
-          <li><a href="#">Rules & Prizes</a></li>
-          <li><a href="#">Sponsors</a></li>
-          <li><a href="#">FAQ</a></li>
+          <li><%= link_to "register", new_team_path %></li>
+          <li><%= link_to "competition", competition_path %></li>
+          <li><%= link_to "schedule", schedule_path %></li>
+          <li><%= link_to "sponsors", sponsors_path %></li>
         </ul>
       </nav>
     </header>
-    <section id="content">
-      <%= yield %>
-      <aside></aside>
-    </section>
+    <%= yield %>
   </div>
 </body>
 </html>
