@@ -19,7 +19,7 @@ html, body {
   padding: 10px;
   color: $base1;
   background: $base03;
-  font-family: 'consolas';
+  font-family: 'Consolas', 'Menlo', 'Monaco', 'Lucida Console', 'Courier New', 'Courier', monospace;
   font-size: 14px;
   font-weight: normal;
   line-height: 20px;
@@ -63,4 +63,12 @@ p {
 
 date {
   color: $magenta;
+}
+
+.team {
+  margin-bottom: 20px;
+  border: 1px solid $base1;
+  &.new {
+    border: 1px solid $green;
+  }
 }
