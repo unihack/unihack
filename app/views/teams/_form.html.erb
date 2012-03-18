@@ -15,6 +15,15 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+
+  <%= f.fields_for :members do |ff| %>
+    <%= ff.label :name %><br />
+    <%= ff.text_field :name %><br />
+    <%= ff.label :email %><br />
+    <%= ff.text_field :email %><br />
+    <%= ff.label :github %><br />
+    <%= ff.text_field :github %><br />
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
