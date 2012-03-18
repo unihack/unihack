@@ -23,6 +23,7 @@ html, body {
   font-size: 14px;
   font-weight: normal;
   line-height: 20px;
+  text-transform: lowercase;
 }
 
 a {
@@ -52,7 +53,7 @@ h2 {
 ul {
   padding-left: 20px;
   list-style: none;
-  li { 
+  li {
     &:before { content: "> "; }
   }
 }
@@ -77,33 +78,53 @@ time {
   color: $green;
 }
 
-
-
-
-
-
-
-#error_explanation {
-  margin-bottom: 20px;
-  border: 1px solid $red;
-  padding: 7px;
-  //padding-bottom: 0;
-  
-  background-color: $base01;
-  h2 {
-    text-align: left;
-    padding: 5px 5px 5px 15px;
+form {
+  padding-left: 20px;
+  label {
+    display: block;
+    text-transform: lowercase;
+    //&:after { content: "*"; }
+  }
+  input {
+    padding: 5px;
+    width: 180px;
+    color: $base03;
+    font-family: 'Consolas', 'Menlo', 'Monaco', 'Lucida Console', 'Courier New', 'Courier', monospace;
     font-size: 12px;
-    margin: -7px;
-    margin-bottom: 0px;
-    background-color: $red;
-    color: $base1; }
-  ul li {
-    list-style: square; } }
-
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table; }
-
-
+    background: $base1;
+    //border: 1px solid $base1;
+    border: none;
+    outline: none;
+  }
+  .member {
+    float: left;
+    width: 200px;
+    margin: 10px 10px 0 0;
+    padding: 5px 0 5px 5px;
+    border-left: 4px solid $base1;
+  }
+  .actions {
+    clear: both;
+    padding: 20px 0;
+    input {
+      background: $green;
+    }
+  }
+  #error_explanation {
+    margin-bottom: 20px;
+    border-bottom: 4px solid $red;
+    h2 {
+      padding: 5px 5px 5px 10px;
+      font-size: 14px;
+      line-height: 20px;
+      background-color: $red;
+      color: $base2; 
+    }
+  }
+  .field_with_errors {
+    input {
+      color: $base2;
+      background: $red;
+    }
+  }
+}

@@ -12,26 +12,28 @@
   <% #end %>
   
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "team name" %>
     <%= f.text_field :name %>
   </div>
   
   <%= f.fields_for :members do |ff| %>
-    <div class="field">
-      <%= ff.label :name %><br />
-      <%= ff.text_field :name %>
-    </div>
-    <div class="field">
-      <%= ff.label :email %><br />
-      <%= ff.text_field :email %>
-    </div>
-    <div class="field">
-      <%= ff.label :github %><br />
-      <%= ff.text_field :github %>
+    <div class="member">
+      <div class="field">
+        <%= ff.label :name %>
+        <%= ff.text_field :name %>
+      </div>
+      <div class="field">
+        <%= ff.label :email %>
+        <%= ff.text_field :email %>
+      </div>
+      <div class="field">
+        <%= ff.label :github %>
+        <%= ff.text_field :github %>
+      </div>
     </div>
   <% end %>
   
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "register my team" %>
   </div>
 <% end %>
