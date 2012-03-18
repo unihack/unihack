@@ -1,6 +1,6 @@
 <%= form_for(@team) do |f| %>
   
-  <% if @team.errors.any? %>
+  <% #if @team.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</h2>
       <ul>
@@ -9,21 +9,28 @@
       <% end %>
       </ul>
     </div>
-  <% end %>
+  <% #end %>
   
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-
+  
   <%= f.fields_for :members do |ff| %>
-    <%= ff.label :name %><br />
-    <%= ff.text_field :name %><br />
-    <%= ff.label :email %><br />
-    <%= ff.text_field :email %><br />
-    <%= ff.label :github %><br />
-    <%= ff.text_field :github %><br />
+    <div class="field">
+      <%= ff.label :name %><br />
+      <%= ff.text_field :name %>
+    </div>
+    <div class="field">
+      <%= ff.label :email %><br />
+      <%= ff.text_field :email %>
+    </div>
+    <div class="field">
+      <%= ff.label :github %><br />
+      <%= ff.text_field :github %>
+    </div>
   <% end %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
