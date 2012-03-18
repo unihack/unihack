@@ -4,5 +4,7 @@ class Member < ActiveRecord::Base
 
   validates :name,   :presence => true
   validates :email,  :presence => true, :uniqueness => true
-  validates :github, :presence => true
+  validates :github, :presence => true, :uniqueness => true
+
+
 end

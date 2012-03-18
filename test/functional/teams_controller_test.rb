@@ -1,6 +1,9 @@
 require 'test_helper'
 
 class TeamsControllerTest < ActionController::TestCase
+
+  self.use_instantiated_fixtures = false
+
   setup do
     @team = teams(:one)
   end
@@ -16,12 +19,32 @@ class TeamsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create team" do
-    assert_difference('Team.count') do
-      post :create, team: @team.attributes
+  test "should not create team with only one member" do
+    assert_no_difference('Team.count') do
+      params = { :team => { :name => 'Team Zero', :members_attributes => [
+        { :name => 'Mr Zero', :email => 'mrzero@myzeroemail.com', 
+          :github => 'mrsuperzero' }
+      ]}}
+      post :create, team: params[:team]
     end
 
-    assert_redirected_to team_path(assigns(:team))
+    #assert_response :error
+
+    #assert_redirected_to team_path(assigns(:team))
+  end
+
+  test "should create team with two members" do
+    assert_difference('Team.count') do
+    params = { :team => { :name => 'Team Zero', :members_attributes => [
+      { :name => 'Mr Zero', :email => 'mrzero@myzeroemail.com', 
+        :github => 'mrsuperzero' },
+      { :name => 'Mr One', :email => 'mrone@myoneemail.com', 
+        :github => 'mrsuperone' }
+    ]}}
+      post :create, team: params[:team]
+    end
+
+    assert_redirected_to team_path
   end
 
   test "should show team" do

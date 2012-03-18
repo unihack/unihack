@@ -1,5 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
+one_guy_team:
+  name: One Guy Team
+
+two_guy_team:
+  name: Two Guy Team
+
+five_guy_team:
+  name: Five Guy Team
+
 one:
   name: MyString
 

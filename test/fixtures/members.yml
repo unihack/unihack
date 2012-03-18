@@ -1,5 +1,27 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
+one_guy:
+  name: guy_1
+  email: guy_1@unihackthonians.com
+  github: guy_1_github
+  team: one_guy_team
+
+<% 1.upto(2) do |i| %>
+two_guy_<%= i %>:
+  name: guy_<%= i %>
+  email: guy_<%= i %>@unihackthonians.com
+  github: guy_<%= i %>_github
+  team: two_guy_team
+<% end %>
+
+<% 1.upto(5) do |i| %>
+five_guy_<%= i %>:
+  name: guy_<%= i %>
+  email: guy_<%= i %>@unihackthonians.com
+  github: guy_<%= i %>_github
+  team: five_guy_team
+<% end %>
+
 one:
   name: MyString
   email: MyString
