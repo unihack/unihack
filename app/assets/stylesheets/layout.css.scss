@@ -15,11 +15,16 @@ $blue:      #268bd2;
 $cyan:      #2aa198;
 $green:     #859900;
 
+@font-face {
+  font-family: 'Inconsolata';
+  src: url(asset-path('Inconsolata.otf', font));
+}
+
 html, body {
   padding: 10px;
   color: $base1;
   background: $base03;
-  font-family: 'Consolas', 'Menlo', 'Monaco', 'Lucida Console', 'Courier New', 'Courier', monospace;
+  font-family: 'Inconsolata', 'Consolas', 'Menlo', 'Monaco', 'Courier', monospace;
   font-size: 14px;
   font-weight: normal;
   line-height: 20px;
@@ -89,7 +94,7 @@ form {
     padding: 5px;
     width: 180px;
     color: $base03;
-    font-family: 'Consolas', 'Menlo', 'Monaco', 'Lucida Console', 'Courier New', 'Courier', monospace;
+    font-family: 'Inconsolata', 'Consolas', 'Menlo', 'Monaco', 'Courier', monospace;
     font-size: 12px;
     background: $base1;
     //border: 1px solid $base1;
