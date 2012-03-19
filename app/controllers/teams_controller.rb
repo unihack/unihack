@@ -13,6 +13,7 @@ class TeamsController < ApplicationController
   # POST /teams
   def create
     @team = Team.new(params[:team])
+    members_copy = Array.new(@team.members)
     @team.members.delete_if {|m| m.name.blank?}
     
     respond_to do |format|
@@ -20,7 +21,7 @@ class TeamsController < ApplicationController
         format.html { redirect_to teams_path, 
           notice: 'Team was successfully created.' }
       else
-        (4 - @team.members.count).times { @team.members.build }
+        @team.members = members_copy
         format.html { render action: "new" }
       end
     end
