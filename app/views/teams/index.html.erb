@@ -1,4 +1,8 @@
 <h2>teams</h2>
+<% if @teams.count == 0 %>
+  what a sad and empty page.
+  <%= link_to "register your team", new_team_path, :class => "green" %> now!
+<% end %>
 <% @teams.each do |team| %>
   <div class="team">
     <p>

@@ -1,4 +1,7 @@
 <h2>teams</h2>
+<% if @teams.count == 0 %>
+  what a sad and empty page. go recruit some teams!
+<% end %>
 <% @teams.each do |team| %>
   <div class="team">
     <p>
