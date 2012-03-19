@@ -3,15 +3,11 @@
   <div class="team">
     <p>
       <%= team.name.downcase %>
-      [<%= pluralize team.members.count, "member" %>]
     </p>
-    <% team.members.each do |member| %>
-      <ul>
-        <li><%= member.name.downcase %></li>
-        <ul>
-          <li><%= link_to "github.com/" + member.github, "http://www.github.com/" + member.github %></li>
-        </ul>
-      </ul>
-    <% end %>
+    <ul>
+      <% team.members.each do |member| %>
+        <li><%= link_to member.name.downcase, "http://www.github.com/" + member.github %></li>
+      <% end %>
+    </ul>
   </div>
 <% end %>

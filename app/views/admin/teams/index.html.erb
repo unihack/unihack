@@ -4,14 +4,12 @@
     <p>
       <%= team.name.downcase %>
       [<%= pluralize team.members.count, "member" %>]
+      [<%= link_to "destroy", [:admin, team], :method => "delete", :confirm => "Are you sure?", :class => "red" %>]
     </p>
     <% team.members.each do |member| %>
       <ul>
-        <li><%= member.name.downcase %></li>
-        <ul>
-          <li><%= member.email.downcase %></li>
-          <li><%= link_to "github.com/" + member.github, "http://www.github.com/" + member.github %></li>
-        </ul>
+        <li><%= link_to member.name.downcase, "http://www.github.com/" + member.github %></li>
+        <li><%= member.email.downcase %></li>
       </ul>
     <% end %>
   </div>

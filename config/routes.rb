@@ -1,13 +1,18 @@
 Unihack::Application.routes.draw do
 
+  root :to => 'home#index'
+
+  match 'competition' => 'home#competition'
+  match 'schedule' => 'home#schedule'
+  match 'sponsors' => 'home#sponsors'
+
   resources :teams do
     resources :members
   end
 
-  match 'admin' => 'admin#index'
-  match 'competition' => 'home#competition'
-  match 'schedule' => 'home#schedule'
-  match 'sponsors' => 'home#sponsors'
+  namespace :admin do
+    resources :teams
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -58,7 +63,7 @@ Unihack::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'home#index'
+  # root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 
