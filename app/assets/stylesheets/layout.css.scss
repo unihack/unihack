@@ -56,10 +56,16 @@ h2 {
 }
 
 ul {
-  padding-left: 20px;
+  position: relative;
+  padding-left: 15px;
   list-style: none;
   li {
-    &:before { content: "> "; }
+    padding-left: 20px;
+    &:before { 
+      position: absolute;
+      left: 20px;
+      content: "> "; 
+    }
   }
 }
 
@@ -69,6 +75,10 @@ p {
 
 time {
   color: $magenta;
+}
+
+strong {
+  text-decoration: underline;
 }
 
 .team {
