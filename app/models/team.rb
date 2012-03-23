@@ -1,18 +1,17 @@
 class Team < ActiveRecord::Base
   has_many :members, :dependent => :destroy
 
-  validates_associated :members
-
   accepts_nested_attributes_for :members
+
+  validates_associated :members
 
   validates :name, :presence   => true, 
                    :length     => { :minimum => 4, :maximum => 24 },
                    :uniqueness => true
-  validates :members, :length => { 
-    :minimum => 2, 
-    :maximum => 4, 
-    :message => "should be at least 2"
-  }
+
+  validates :members, :length => { :minimum => 2, 
+                                   :maximum => 4, 
+                                   :message => "should be at least 2" }
   
   validate :email_unique_among_members, :github_unique_among_members
 
@@ -29,7 +28,4 @@ class Team < ActiveRecord::Base
       errors.add(:members, "github should be unique")
     end
   end
-
-      
-
 end

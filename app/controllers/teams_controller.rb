@@ -14,12 +14,13 @@ class TeamsController < ApplicationController
   def create
     @team = Team.new(params[:team])
     members_copy = Array.new(@team.members)
-    @team.members.delete_if {|m| m.name.blank?}
+    @team.members.delete_if { 
+      |m| m.name.blank? && m.email.blank? && m.github.blank? 
+    }
     
     respond_to do |format|
       if @team.save
-        format.html { redirect_to teams_path, 
-          notice: 'Team was successfully created.' }
+        format.html { redirect_to teams_path }
       else
         @team.members = members_copy
         format.html { render action: "new" }
