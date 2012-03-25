@@ -10,7 +10,7 @@
     </p>
     <ul>
       <% team.members.each do |member| %>
-        <li><%= link_to member.name.downcase, "http://www.github.com/" + member.github %></li>
+        <li><%= member.name %></li>
       <% end %>
     </ul>
   </div>
