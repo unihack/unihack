@@ -97,6 +97,16 @@ strong {
   color: $red;
 }
 
+.closed {
+  text-decoration: line-through;
+}
+
+.info {
+  padding: 10px;
+  color: $base03;
+  background: $base1;
+}
+
 form {
   padding-left: 20px;
   label {
